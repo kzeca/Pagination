@@ -23,19 +23,16 @@ function App() {
 
     fetchRequests();
 
-  }, []); // mudar essa array vazio para atualizar quando mudar
+  }, []);
   
-  // Get current posts
   const indexOfLastRequest = currentPage * requestsPerPage;
   const indexOfFirstRequest = indexOfLastRequest - requestsPerPage;
   const currentRequest = requests.slice(indexOfFirstRequest, indexOfLastRequest);
 
-  //Change Page
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber)
   }
 
-  // Change Item Per page
   const itemsPerPage = (itemsPerPage: number) => {
     setRequestPerPage(itemsPerPage);
   }
